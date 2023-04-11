@@ -1,1 +1,1 @@
-javascript:(function () {var e = window.getSelection().toString().trim();if (e !== '') alert(e);var a = document.createElement('a');a.href = 'data:text/plain;charset=utf-8,' + JSON.stringify(e);a.target = '_blank';a.download = 'rawdata.json';a.click();})();
+javascript:(function () {var e = window.getSelection().toString().trim();var textToCopy = e;navigator.clipboard.writeText(textToCopy).then(function () {console.log('Text copied to clipboard: ' + textToCopy);}).catch(function (error) {alert('Failed to copy text to clipboard: ' + error);});})();
