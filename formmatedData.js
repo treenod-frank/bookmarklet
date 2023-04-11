@@ -1,8 +1,9 @@
 javascript:(function () {
-  var e = document.documentElement.innerHTML;
+  var e = window.getSelection().toString().trim();
+  if (e !== '') alert(e);
   var a = document.createElement('a');
-  a.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(e);
+  a.href = 'data:text/plain;charset=utf-8,' + JSON.stringify(e);
   a.target = '_blank';
-  a.download = 'page.html';
+  a.download = 'rawdata.json';
   a.click();
 })();
